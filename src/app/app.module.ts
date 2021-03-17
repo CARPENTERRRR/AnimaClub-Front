@@ -14,12 +14,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {SignupFormService} from './services/signup-form.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    SignupFormComponent
   ],
     imports: [
         BrowserModule,
@@ -32,9 +37,11 @@ import {MatSelectModule} from '@angular/material/select';
         MatFormFieldModule,
         MatInputModule,
         MatRadioModule,
-        MatSelectModule
+        MatSelectModule,
+        ReactiveFormsModule,
+        HttpClientModule
     ],
-  providers: [],
+  providers: [SignupFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
